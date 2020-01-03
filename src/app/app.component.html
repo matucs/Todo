@@ -11,13 +11,14 @@
 <body>
   <div class="container p-5">
     <div class="mx-auto mt-5 p-5">
-      <div class="bg-info text-center ">
+      <div class="bg-info text-center mb-2">
         <h2 class="p-5 text-white">ToDo App</h2>
+        <button  class="btn btn-outline-light mb-2" (click)="onRemoveCheckedItems()" >Remove checked Items</button>
       </div>
       <form>
         <div class="from-group">
           <div class="input-group flex-nowrap mb-2">
-            <input type="text" class="form-control" placeholder="Username" aria-label="Username" [(ngModel)]="text"
+            <input #input type="text" class="form-control" placeholder="Username" aria-label="Username" [(ngModel)]="text"
               name="inputTodo" aria-describedby="addon-wrapping">
             <div class="input-group-append">
               <a href="#" class="btn btn-outline-info" (click)="onItemAdd()">
