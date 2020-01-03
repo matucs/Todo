@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>todo</title>
+</head>
+
+<body>
+  <div class="container p-5">
+    <div class="mx-auto mt-5 p-5">
+      <div class="bg-info text-center ">
+        <h2 class="p-5 text-white">ToDo App</h2>
+      </div>
+      <form>
+        <div class="from-group">
+          <div class="input-group flex-nowrap mb-2">
+            <input type="text" class="form-control" placeholder="Username" aria-label="Username" [(ngModel)]="text"
+              name="inputTodo" aria-describedby="addon-wrapping">
+            <div class="input-group-append">
+              <a href="#" class="btn btn-outline-info" (click)="onItemAdd()">
+                <span class="iconify" data-icon="gridicons:add" data-inline="false" style="color: black; "></span>
+              </a>
+            </div>
+          </div>
+          <ul class="list-group " *ngFor="let item of list;let i = index;">
+            <div class="input-group ">
+              <li id={{i}} class="form-control" (click)="onCheck(i)">
+                <span  class=" iconify"   [attr.data-icon]="item.icon" data-inline="false" style="color: green;"></span>
+                {{item.text}}
+              </li>
+              <div class="input-group-append">
+                <a href="#" class="btn btn-outline-secondary" (click)="onDelete(i)">
+                  <span class="iconify" data-icon="fa-regular:trash-alt" data-inline="false" style="color: red;"></span>
+                </a>
+              </div>
+            </div>
+          </ul>
+        </div>
+      </form>
+    </div>
+  </div>
+</body>
+
+</html>
